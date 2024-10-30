@@ -1,0 +1,225 @@
+.main-h2{
+    font-weight: 500;
+    margin: 12px;
+    font-size: 20px;
+}
+body{
+    font-family: "Inter", sans-serif;
+}
+.cart-section .container{
+    margin: 20px;
+}
+.cart-section .row-grid{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    column-gap: 30px;
+}
+.cart-section-left .cart-section-left-detail{
+    border: 2px solid #ddd;
+    border-radius: 5px 5px 0 0;
+    height: 23rem;
+    overflow-y: auto;
+}
+.cart-section-left table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart-section-left table th,td{
+    text-align: center;
+    padding: 4px;
+    border-bottom: 2px solid #ddd;
+}
+.cart-section-left table th{
+    font-size: 1rem; 
+    font-weight: 600;
+    position: sticky;
+    top: 0; 
+    background: #ddd;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.cart-section-left table :nth-child(2){
+    width: 50%;
+}
+.cart-section-left table :nth-child(3){
+    width: 20%;
+}
+.cart-section-left table :nth-child(4){
+    width: 15%;
+} 
+.cart-section-left table tbody tr td:nth-child(2){
+    text-align: left;
+    border-left: 2px solid #ddd;
+    padding-left: 20px;
+}
+.cart-section-left table tbody tr td:nth-child(3){
+    border-left: 2px solid #ddd;
+}
+.cart-section-left table tbody tr td:nth-child(4){
+    border-left: 2px solid #ddd;
+    cursor: pointer;
+    font-size: 30px;
+}
+.cart-section-left table tbody tr td:nth-child(4) a{
+    text-decoration: none;
+}
+.cart-section-left table tbody tr td:nth-child(2) h1{
+    font-size: 18px;
+    font-weight: 200;
+    margin: 5px 0;
+}
+.cart-section-left table tbody tr td:nth-child(2) .product-item-price p{
+    font-size: 15px;
+    margin: 0;
+}
+.cart-section-left table tbody tr td:nth-child(1) img{
+    width: 80px;
+}
+/* xóa nút lên xuống ở thanh ouput */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.cart-section-left-detail .cart-section-left-body .product-detail-quatity{
+    position: relative;
+    width: 90px;
+    margin-bottom: 5px;
+    margin-top: 7px;
+}
+.cart-section-left-detail .cart-section-left-body .product-detail-quatity input{
+    height: 23px;
+    width: 88px;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+    font-size: 17px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.cart-section-left-detail .cart-section-left-body .product-detail-quatity button {
+    height: 24px;
+    width: 24px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+.cart-section-left-detail .cart-section-left-body .product-detail-quatity .add-button {
+    right: 0;
+    top: 0;
+}
+
+.cart-section-left-detail .cart-section-left-body .product-detail-quatity .subtract-button {
+    padding-bottom: 4px;
+    left: 0;
+    top: 0;
+}
+
+/* phần dưới bảng */
+.cart-section-left .total-money {
+    display: grid;
+    grid-template-columns: 538px 1fr;
+    border-left: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    height: 30px;
+    align-items: center;
+}
+
+.cart-section-left .total-money .total-money-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #ddd;
+    text-align: center;
+    height: 100%;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.cart-section-left .total-money .total-money-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+}
+.cart-section-left .total-money .total-money-detail sup{
+    padding-bottom: 10px;
+}
+
+/* không phải bảng */
+.cart-section .cart-section-left .cart-return-button{
+    color: red;
+    font-style: italic;
+    text-decoration: none;
+}
+
+
+/* right */
+.cart-section .cart-section-right{
+    margin-right: 30px;
+}
+.cart-section .cart-section-right input{
+    height: 35px;
+    border: none;
+    background-color: #d5d5d5;
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-radius: 5px;
+}
+.cart-section .cart-section-right select{
+    height: 35px;
+    border: none;
+    background-color: #d5d5d5;
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-radius: 5px;
+    width: 32%;
+}
+.cart-section .cart-section-right-select{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-section .cart-section-right-input-name-phone{
+    display: flex;
+    justify-content: space-between;
+}
+.cart-section .cart-section-right-input-name-phone input{
+    width: 46%;
+}
+.cart-section .cart-section-right-input-email input{
+    width: 97.2%;
+}
+.cart-section .cart-section-right-input-address input{
+    width: 97.2%;
+}
+.cart-section .cart-section-right-input-note input{
+    width: 97.2%;
+}
+.cart-section .cart-section-right-input-method select{
+    width: 35%;
+}
+.main-btn{
+    padding: 12px 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: black;
+    transition: 0.25s ease-in-out;
+}
+.main-btn:hover{
+    background-color: rgb(100, 239, 193);
+    color: black;
+}

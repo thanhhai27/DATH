@@ -1,0 +1,484 @@
+:root{
+    --main-bg-color: #414e66;
+    --sub-bg-color: #f2f7fb;
+    --top-height: 70px;
+    --main-transition: all 0.3s ease;
+    --color-hover-test: #4a87ce;
+    --main-border-radius: 5px;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+li{
+    list-style: none;
+}
+.row-grid{
+    display: grid;
+    justify-content: space-between;
+}
+.flex-box{
+    display: flex;
+}
+.main-btn{
+    padding: 10px 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.delete-class{
+    padding: 3px;
+    background-color: red;
+    color: white;
+    border-radius: var(--main-border-radius);
+    cursor: pointer;
+}
+.edit-class,.confirm-order{
+    padding: 3px;
+    background-color: green;
+    color: white;
+    border-radius: var(--main-border-radius);
+    cursor: pointer;
+}
+.non-confirm-order{
+    padding: 3px;
+    background-color: orange;
+    color: white;
+    border-radius: var(--main-border-radius);
+    cursor: pointer;
+}
+
+body{
+    overflow: hidden;
+    font-family: "Inter", sans-serif;
+}
+/* general */
+.admin .row-grid{
+    grid-template-columns: 17% 83%;
+}
+
+/* sidebar */
+.admin-sidebar{
+    height: 100vh;
+    background-color: var(--main-bg-color);
+}
+.admin-sidebar-top{
+    text-align: center;
+    height: var(--top-height);
+    border-bottom: 1px solid gray;
+}
+.admin-sidebar-top img{
+    width: 60px;
+}
+.admin-sidebar-content > ul > li > a{
+    width: 100%;
+    display: block;
+    display: flex;
+    justify-content: flex-start;
+}
+.admin-sidebar-content > ul > li > a i:last-child{
+    margin-left: auto;
+}
+.admin-sidebar-content ul li a i{
+    margin-right: 6px;
+}
+.admin-sidebar-content{
+    padding: 30px 0 0 30px;
+    color: white;
+}
+.admin-sidebar-content ul li{
+    padding: 6px;
+    transition: var(--main-transition);
+}
+.admin-sidebar-content ul li:hover{
+    background-color: rgb(13, 15, 60);
+}
+.sub-menu{
+    height: 0;
+    overflow: hidden;
+    transition: var(--main-transition);
+}
+
+.sub-menu li:hover a{
+    color: var(--color-hover-test);
+}
+/* content */
+.admin-content{
+    background-color: var(--sub-bg-color);
+}
+.admin-content-top{
+    display: flex;
+    justify-content: space-between;
+    height: var(--top-height);
+    border-bottom: 1px solid gray;
+    padding: 0 15px;
+}
+.admin-content-top .flex-box{
+    align-items: center;
+    height: 70px;
+}
+.admin-content-top i{
+    margin-right: 12px;
+    cursor: pointer;
+}
+.admin-content-top-right ul li:last-child p{
+    cursor: pointer;
+}
+.admin-content-top-right ul li:first-child{
+    padding-right: 15px;
+}
+.admin-content-top-right ul li:first-child i{
+    position: relative;
+}
+.admin-content-top-right ul li:first-child i::after{
+    position: absolute;
+    content: attr(number);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    background-color: #4a87ce;
+    border-radius: 50%;
+    top: -12px;
+    right: -12px;
+    color: whitesmoke;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    animation: notification;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.admin-content-top-right ul li:nth-child(2){
+    padding-right: 15px;
+}
+.admin-content-top-right ul li:nth-child(2) i{
+    position: relative;
+}
+.admin-content-top-right ul li:nth-child(2) i::after{
+    position: absolute;
+    content: attr(number);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    background-color: brown;
+    border-radius: 50%;
+    top: -12px;
+    right: -12px;
+    color: whitesmoke;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    animation: notification;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes notification {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.admin-content-main-title h1{
+    padding: 12px;
+    font-weight: 500;
+    position: relative;
+}
+.admin-content-main-title h1::before{
+    position: absolute;
+    display: block;
+    content: "";
+    height: 4px;
+    width: 70px;
+    background-color: var(--main-bg-color);
+    bottom: 6px;
+    left: 12px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.admin-content-main-content{
+    background-color: white;
+}
+/* Thêm sản phẩm */
+.admin-content-main-content-product-add{
+    padding: 12px;
+}
+.admin-content-main-content input{
+    height: 40px;
+    border: none;
+    background-color: var(--sub-bg-color);
+    margin-bottom: 20px;
+    outline: none;
+    border-radius: var(--main-border-radius);
+    padding-left: 6px;
+}
+.admin-content-main-content-input{
+    display: flex;
+    gap: 20px;
+}
+.admin-content-main-content-input input{
+    width: 100%;
+    padding-left: 15px;
+}
+.admin-content-main-content-image input{
+    display: none;
+}
+.admin-content-main-content-image label{
+    display: inline-block;
+    padding: 10px 12px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.image-show{
+    padding-top: 15px;
+    min-height: 150px;
+    padding-bottom: 15px;
+}
+#input-file-img img{
+    width: 400px;
+}
+
+/* Danh sách sản phẩm sửa xóa */
+.admin-content-main-content-product-list{
+    width: 100%;
+    height: auto;
+    max-height: 86.5vh;
+    overflow: auto;
+}
+.admin-content-main-content-product-list table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+.admin-content-main-content-product-list thead{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.admin-content-main-content-product-list table,th,td{
+    text-align: center;
+}
+.admin-content-main-content-product-list table th{
+    background-color: black;
+    color: white;
+    padding: 6px 0;
+}
+
+/* Danh sách đơn hàng */
+.admin-content-main-content-order-list{
+    width: 100%;
+    height: auto;
+    max-height: 86.5vh;
+    overflow: auto;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-outer table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-outer thead{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-outer table a{
+    display: inline-block;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-outer table,th,td{
+    text-align: center;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-outer table th{
+    background-color: black;
+    color: white;
+    padding: 3px 1px;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-outer table td{
+    padding: 6px 0;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-outer table tr td:nth-child(5){
+    width: 180px;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-outer table tr td:nth-child(6){
+    width: 100px;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-outer table tr td:nth-child(9){
+    width: 100px;
+}
+
+/* Chi tiết đơn hàng */
+.admin-content-main-content-order-list .admin-content-main-content-order-list-inner table{
+    width: 100%;
+    padding: 12px 0;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-inner table a{
+    display: inline-block;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-inner table,th,td{
+    text-align: center;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-inner table th{
+    background-color: black;
+    color: white;
+    padding: 3px 1px;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-inner table td{
+    padding: 6px 0;
+}
+.admin-content-main-content-order-list .admin-content-main-content-order-list-inner table tr td:nth-child(3){
+    width: 400px;
+}
+.admin-content-main-content-order-list-inner-sum td{
+    font-size: 17px;
+}
+
+
+/* ô drop-down */
+.profile-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 90%;
+    right: 0;
+    background-color: white;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    width: 160px;
+    z-index: 3;
+    display: none; /* Ẩn đi khi chưa nhấn */
+}
+
+.dropdown-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content ul li {
+    position: relative;
+    padding: 12px 13px;
+    border-bottom: 1px solid #ccc;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.dropdown-content ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    position: relative;
+}
+
+/* Tam giác nằm trên "Thông tin cá nhân", dính liền với nó */
+.dropdown-content ul li:first-child::after {
+    content: '';
+    position: absolute;
+    top: -8px; /* Đặt tam giác ngay phía trên "Thông tin cá nhân" */
+    left: 85.5%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent #ccc transparent; /* Viền tam giác giống với viền mục */
+    z-index: 3;
+}
+
+/* Tạo nền bên trong tam giác giống với màu nền của mục */
+.dropdown-content ul li:first-child::before {
+    content: '';
+    position: absolute;
+    top: -7px; /* Đặt tam giác bên trong viền */
+    left: 85.5%;
+    transform: translateX(-50%);
+    border-width: 0 7px 7px 7px;
+    border-style: solid;
+    border-color: transparent transparent white transparent; /* Nền trắng mặc định */
+    z-index: 4;
+}
+
+.dropdown-content ul li:hover {
+    background-color: #f0f0f0; /* Màu nền khi hover */
+}
+
+/* Khi hover vào "Thông tin cá nhân", tam giác cũng thay đổi theo */
+.dropdown-content ul li:first-child:hover::before {
+    border-color: transparent transparent #f0f0f0 transparent; /* Nền tam giác đổi theo màu nền mục */
+}
+
+.show {
+    display: block; /* Hiển thị dropdown khi có class 'show' */
+}
+
+
+
+/* phần thông tin admin */
+.form-group-admin-info{
+    padding: 20px;
+}
+.form-group-admin-info p{
+    font-size: 20px;
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+.form-group-admin-info span{
+    font-weight: bold;
+    color: #333;
+}
+.form-group-admin-info #eye-icon{
+    cursor: pointer;
+    padding-left: 7px;
+}
+.passwordModal{
+    display: none;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+.passwordModal .passwordModal-detail{
+    padding-top: 13px;
+}
+.passwordModal .passwordModal-detail button {
+    background-color: #308cbe; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    font-size: 16px; 
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px; 
+    transition: background-color 0.25s;
+}
+
+.passwordModal .passwordModal-detail button:hover {
+    background-color: #5094b9; /* Màu nền khi di chuột */
+}
+
+.passwordModal .passwordModal-detail .error-message{
+    color:red; 
+    display:none;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-left: 2px;
+}
+
+
+
+
+

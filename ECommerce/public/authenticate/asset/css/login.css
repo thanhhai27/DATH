@@ -1,0 +1,115 @@
+body {
+    background: url('/authenticate/asset/images/slbk.jpg');
+    background-size: cover;
+}
+#login-page{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+}
+#form-login{
+    max-width: 450px;
+    height: 400px;
+    background: rgba(28, 28, 28, 0.8);
+    flex-grow: 1;
+    padding: 20px 30px 40px;
+    box-shadow: 0px 0px 17px 2px rgba(132, 132, 132, 0.8);
+    border-radius: 7px;
+}
+.form-img-overall{
+    display: flex;
+    justify-content: center;
+}
+.form-img{
+    width: 100px;
+    padding-bottom: 15px;
+}
+.form-heading{
+    font-size: 25px;
+    color: #f5f5f5;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+.form-group{
+    border-bottom: 1px solid #fff;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    display: flex;
+}
+.form-group i{
+    color: #fff;
+    font-size: 14px;
+    padding-right: 10px;
+    padding-top: 3px;
+}
+.form-input{
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #f5f5f5;
+    flex-grow: 1;
+    font-size: 17px;
+}
+#eye i{
+    padding-right: 0;
+    cursor: pointer;
+}
+.form-forgot-pass{
+    text-align: right;
+    margin-top: -10px;
+}
+.forgot-pass {
+    text-decoration: none;
+    color: #cbcbcb;
+    font-size: 13px;
+}
+.forgot-pass:active{
+    color: #7c7c7c;
+}
+
+.form-submit{
+    background: transparent;
+    border: 1px solid #f5f5f5;
+    color: #fff;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 10px 10px;
+    margin-top: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.form-submit:active{
+    border: 1px solid #7c7c7c;
+    color: #7c7c7c;
+}
+.form-register{
+    display: flex;
+    padding-top: 15px;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+.form-register h3{
+    color: #cbcbcb;
+}
+.form-register .register{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+    text-decoration: underline;
+}
+.form-register .register:active{
+    color: rgb(255, 102, 102);
+}
+
+/* báo lỗi */
+#form-login .error-message{
+    color: red; 
+    font-size: 12px;
+    margin-top: -18px;
+    margin-left: 25px;
+}

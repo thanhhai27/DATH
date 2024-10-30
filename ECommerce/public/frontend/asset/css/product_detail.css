@@ -1,0 +1,420 @@
+:root{
+    --main-bg-color: #414e66;
+    --sub-bg-color: #f2f7fb;
+    --top-height: 70px;
+    --main-transition: all 0.3s ease;
+    --color-hover-test: #4a87ce;
+    --main-border-radius: 5px;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+li{
+    list-style: none;
+}
+.row-grid{
+    display: grid;
+    justify-content: space-between;
+}
+.flex-box{
+    display: flex;
+}
+.main-btn{
+    padding: 13px 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: 0.25s ease-in-out;
+    font-size: 15px;
+}
+.main-btn:hover{
+    background-color: aquamarine;
+    color: black;
+}
+.delete-class{
+    padding: 3px;
+    background-color: red;
+    color: white;
+    border-radius: var(--main-border-radius);
+    cursor: pointer;
+}
+.edit-class,.confirm-order{
+    padding: 3px;
+    background-color: green;
+    color: white;
+    border-radius: var(--main-border-radius);
+    cursor: pointer;
+}
+.non_confirm-order{
+    padding: 3px;
+    background-color: orange;
+    color: white;
+    border-radius: var(--main-border-radius);
+    cursor: pointer;
+}
+.input{
+    outline: none;
+}
+
+/* general */
+.admin .row-grid{
+    grid-template-columns: 20% 80%;
+}
+
+/* sidebar */
+.admin-sidebar{
+    background-color: var(--main-bg-color);
+}
+.admin-sidebar-top{
+    text-align: center;
+    height: var(--top-height);
+    border-bottom: 1px solid gray;
+}
+.admin-sidebar-top img{
+    width: 60px;
+    margin-top: 3px;
+}
+/* content */
+.admin-content-top{
+    background-color: var(--sub-bg-color);
+    display: flex;
+    justify-content: space-between;
+    height: var(--top-height);
+    border-bottom: 1px solid gray;
+    padding: 0 15px;
+}
+.admin-content-top{
+    align-items: center;
+}
+.admin-content-top .flex-box{
+    align-items: center;
+    height: 70px;
+    font-size: 20px;
+}
+.admin-content-top i{
+    margin-right: 12px;
+    cursor: pointer;
+}
+.admin-content-top-left{
+    padding-left: 40px;
+    display: flex;
+}
+.admin-content-top-left .header-search{
+    position: relative;
+}
+.admin-content-top-left .header-search i{
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.admin-content-top-left .header-search input{
+    width: 300px;
+    height: 35px;
+    border: 1px solid black;
+    padding-right: 10px;
+    padding-left: 25px;
+    border-radius: 15px;
+}
+.admin-content-top-right .cart-noti:first-child{
+    margin-top: 10px;
+    padding-right: 15px;
+}
+.admin-content-top-right .cart-noti:first-child i{
+    position: relative;
+}
+.admin-content-top-right .cart-noti:first-child i::after{
+    position: absolute;
+    content: attr(number);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    background-color: black;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: 600;
+    top: -11px;
+    right: -11px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.admin-content-top-right  .cart-noti:nth-child(2){
+    margin-top: 10px;
+    padding-right: 15px;
+}
+.admin-content-top-right  .cart-noti:nth-child(2) i{
+    position: relative;
+}
+.admin-content-top-right  .cart-noti:nth-child(2) i::after{
+    position: absolute;
+    content: attr(number);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    background-color: brown;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: 600;
+    top: -11px;
+    right: -11px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    animation: notification;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+}
+@keyframes notification {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* ------------main-content----------- */
+.product-detail{
+    padding-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.product-detail .row-flex-product-detail{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    padding-left: 6px;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+}
+.product-detail .row-flex-product-detail i{
+    margin: 0px 12px;
+}
+.row-flex-product-detail::after{
+    position: absolute;
+    content: "";
+    height: 50%;
+    width: 2px;
+    background-color: #d5d5d5;
+    left: 0;
+}
+.row-flex-product-detail::before{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    bottom: 0;
+    left: 6px;
+    background-color: black;
+    border-radius: 10px;
+}
+.product-detail .row-grid{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 50% 50%;
+}
+.product-detail .product-detail-left{
+    text-align: center;
+}
+.product-detail .product-detail-left img{
+    width: 85%;
+}
+.product-detail-right-infor h1{
+    font-size: 35px;
+    font-weight: 500;
+}
+.product-detail-right-infor .product-detail-right-infor-rating{
+    color: red;
+    font-size: 18px;
+    text-decoration: underline;
+}
+.product-detail-right-infor i{
+    color: red;
+}
+.product-detail-right .product-detail-right-price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+    height: 60px;
+    margin-top: 8px;
+}
+.product-detail-right .product-detail-right-price .price{
+    color: red;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.product-detail-right-des h2{
+    font-weight: bolder;
+    margin: 12px 0;
+    font-size: 25px;
+}
+.product-detail-right-des ul{
+    background-color: #efefef;
+    padding: 15px 25px;
+    border-radius: 5px;
+}
+.product-detail-right-des ul li{
+    list-style: circle;
+    margin-bottom: 10px;
+}
+.product-detail-right .product-detail-right-deli h2{
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+.product-detail-right .product-detail-right-deli .product-detail-right-deli-info{
+    display: flex;
+    align-items: center;
+}
+.product-detail-right .product-detail-right-deli .product-detail-right-deli-info span{
+    padding-left: 5px;
+}
+.product-detail-right .product-detail-right-quantity h2{
+    font-weight: bolder;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font-size: 25px;
+}
+/* xóa nút lên xuống ở thanh ouput */
+.product-detail-right .product-detail-right-quantity input::-webkit-outer-spin-button,
+.product-detail-right .product-detail-right-quantity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.product-detail-right .product-detail-right-quantity-input{
+    position: relative;
+    width: 90px;
+    margin-bottom: 18px;
+}
+.product-detail-right .product-detail-right-quantity-input input{
+    height: 25px;
+    width: 90px;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+    font-size: 17px;
+    padding-top: 3px;
+    pointer-events: none;
+    user-select: none;
+}
+.product-detail-right .product-detail-right-quantity-input i{
+    height: 28px;
+    width: 28px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
+.product-detail-right .product-detail-right-quantity-input .ri-add-line{
+    right: 0;
+    top: 0;
+}
+
+/* ô drop-down */
+.profile-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 90%;
+    right: 0;
+    background-color: white;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    width: 160px;
+    z-index: 1;
+    display: none; /* Ẩn đi khi chưa nhấn */
+}
+
+.dropdown-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content ul li {
+    position: relative;
+    padding: 12px 13px;
+    border-bottom: 1px solid #ccc;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.dropdown-content ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    position: relative;
+}
+
+/* Tam giác nằm trên "Thông tin cá nhân", dính liền với nó */
+.dropdown-content ul li:first-child::after {
+    content: '';
+    position: absolute;
+    top: -8px; /* Đặt tam giác ngay phía trên "Thông tin cá nhân" */
+    left: 85.5%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent #ccc transparent; /* Viền tam giác giống với viền mục */
+    z-index: 1;
+}
+
+/* Tạo nền bên trong tam giác giống với màu nền của mục */
+.dropdown-content ul li:first-child::before {
+    content: '';
+    position: absolute;
+    top: -7px; /* Đặt tam giác bên trong viền */
+    left: 85.5%;
+    transform: translateX(-50%);
+    border-width: 0 7px 7px 7px;
+    border-style: solid;
+    border-color: transparent transparent white transparent; /* Nền trắng mặc định */
+    z-index: 2;
+}
+
+.dropdown-content ul li:hover {
+    background-color: #f0f0f0; /* Màu nền khi hover */
+}
+
+/* Khi hover vào "Thông tin cá nhân", tam giác cũng thay đổi theo */
+.dropdown-content ul li:first-child:hover::before {
+    border-color: transparent transparent #f0f0f0 transparent; /* Nền tam giác đổi theo màu nền mục */
+}
+
+.show {
+    display: block; /* Hiển thị dropdown khi có class 'show' */
+}
+
+
